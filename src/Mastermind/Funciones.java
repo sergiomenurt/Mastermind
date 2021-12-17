@@ -3,7 +3,6 @@ package Mastermind;
 public class Funciones {
 
 
-
     public static boolean generarAleatorio(Tablero tablero) {
 
         tablero.setCifraAleatorio("45463");
@@ -11,7 +10,7 @@ public class Funciones {
 
     }
 
-    public static boolean pedirSecuencia(Tablero tablero){
+    public static boolean pedirSecuencia(Tablero tablero) {
         return false;
         /**
          * @param cifraAleatorio cifra generada
@@ -28,7 +27,7 @@ public class Funciones {
         return cifraAleatorio.equals(cifraSecuencia);
     }
 
-    public static void mostrar(String mensaje){
+    public static void mostrar(String mensaje) {
 
 
     }
@@ -42,28 +41,32 @@ public class Funciones {
 
         String pista = new String(tablero.getCifraPista());
 
-        for(int i =0;i<5;i++){
+        for (int i = 0; i < 5; i++) {
 
-            if(aleatorio.charAt(i)==secuencia.charAt(i)){
+            if (aleatorio.charAt(i) == secuencia.charAt(i)) {
 
                 char caracter = '0';
-                pista.charAt(i)=caracter;
+
+                pista.replace(pista.charAt(i), 'O');
 
 
-            }else{
+            } else {
 
-            for(int j=0;j<5;j++){
-
-                char caracter = 'X';
-                pista.charAt(i)=caracter;
-                break;
+                for (int j = 0; j < 5; j++) {
 
 
+                    pista.replace(pista.charAt(i), 'X');
+                    break;
+
+
+                }
             }
+
+
+
         }
-
-
-
-        return null;
+        System.out.println(tablero.getCifraAleatorio());
+        return tablero.getCifraAleatorio();
     }
+
 }
